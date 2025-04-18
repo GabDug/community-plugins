@@ -16,10 +16,12 @@
 import {
   AnnouncementsCard,
   AnnouncementsTimeline,
+  HomepageAnnouncements,
   NewAnnouncementBanner,
 } from '@backstage-community/plugin-announcements';
 import { Grid, Typography } from '@material-ui/core';
 import { Content } from '@backstage/core-components';
+import { CustomHomepageGrid, HomePageRandomJoke } from '@backstage/plugin-home';
 
 export const Home = () => {
   return (
@@ -36,6 +38,13 @@ export const Home = () => {
         <Grid item xs={12}>
           <Typography variant="h4">Homepage component</Typography>
           <AnnouncementsCard max={2} />
+        </Grid>
+        <Grid item xs={12}>
+          <Typography variant="h4">Customizable Homepage component</Typography>
+          <CustomHomepageGrid>
+            <HomepageAnnouncements />
+            <HomePageRandomJoke />
+          </CustomHomepageGrid>
         </Grid>
         <Grid item xs={12}>
           <Typography variant="h4">Announcements Timeline</Typography>
