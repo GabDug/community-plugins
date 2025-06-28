@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import React from 'react';
 import { DateTime } from 'luxon';
 import {
   List,
@@ -108,7 +107,10 @@ export const AnnouncementsCardContent = ({
           </ListItemIcon>
           <ListItemText
             primary={
-              <Link to={viewAnnouncementLink({ id: announcement.id })}>
+              <Link
+                to={viewAnnouncementLink({ id: announcement.id })}
+                variant="inherit"
+              >
                 {announcement.title}
               </Link>
             }
@@ -123,6 +125,7 @@ export const AnnouncementsCardContent = ({
                         to={`${announcementsLink()}?category=${
                           announcement.category.slug
                         }`}
+                        variant="inherit"
                       >
                         {announcement.category.title}
                       </Link>
@@ -151,7 +154,7 @@ export const AnnouncementsCardContent = ({
         <ListItem>
           <ListItemText>
             {`${t('announcementsCard.noAnnouncements')} `}
-            <Link to={createAnnouncementLink()}>
+            <Link to={createAnnouncementLink()} variant="inherit">
               {t('announcementsCard.addOne')}
             </Link>
             ?
