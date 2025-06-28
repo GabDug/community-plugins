@@ -134,6 +134,7 @@ const AnnouncementCard = ({
         >
           <EntityRefLink
             entityRef={announcement.on_behalf_of || announcement.publisher}
+            variant="inherit"
             hideIcon
           />
         </EntityPeekAheadPopover>
